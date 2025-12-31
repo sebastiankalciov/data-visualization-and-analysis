@@ -12,18 +12,19 @@ import { Upload, FileJson, AlertCircle, Activity } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { NetworkGraph } from "@/components/network-graph"
 import { StatsCard } from "@/components/stats-card"
+import type { SimulationNodeDatum, SimulationLinkDatum } from "d3"
 
-export interface Node {
+export interface Node extends SimulationNodeDatum {
     id: string
     label?: string
+    question?: string
     year?: number
     isOutlier?: boolean
     [key: string]: any
 }
 
-export interface Link {
-    source: string | Node
-    target: string | Node
+
+export interface Link extends SimulationLinkDatum<Node> {
     similarity?: number
     [key: string]: any
 }
