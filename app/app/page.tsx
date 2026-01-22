@@ -244,32 +244,6 @@ export default function DataVisualizationDashboard() {
                                     </CardContent>
                                 </Card>
 
-                                {availableYears.length > 0 && (
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle>Year Filter</CardTitle>
-                                            <CardDescription>Select years to display</CardDescription>
-                                        </CardHeader>
-                                        <CardContent className="space-y-3">
-                                            {availableYears.map((year) => (
-                                                <div key={year} className="flex items-center space-x-2">
-                                                    <Checkbox
-                                                        id={`year-${year}`}
-                                                        checked={selectedYears.includes(year)}
-                                                        onCheckedChange={() => toggleYear(year)}
-                                                    />
-                                                    <Label
-                                                        htmlFor={`year-${year}`}
-                                                        className="cursor-pointer text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                                    >
-                                                        {year}
-                                                    </Label>
-                                                </div>
-                                            ))}
-                                        </CardContent>
-                                    </Card>
-                                )}
-
                                 <Card>
                                     <CardHeader>
                                         <CardTitle>Display Options</CardTitle>
